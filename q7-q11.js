@@ -48,13 +48,16 @@ const couldThrowError = () => {
   return 'success'
 }
 
-try {
-  let result = couldThrowError()
-  let value = couldThrowError(result)
-} catch (e) {
-  value = 'less than 2'
-  console.error(e.message, value);
+const newFunction = () => {
+  try {
+    couldThrowError()
+  } catch (e) {
+    value = 'less than 2'
+    console.error(e.message, value);
+  }
+  return "Success"
 }
+console.log(newFunction());
 
 
 
